@@ -9,24 +9,27 @@
  */
 int main(void)
 {
-	int d, p;
+	int i, j, k;
 
-	for (d = '0'; d < '9'; d++)
+	int i = 0;
+
+	while (i < 100)
 	{
-		for (p = d + 1; p <= '9'; p++)
+		j = i % 10; /* singles digit */
+		k = i / 10; /* doubles digit */
+
+		if (k < j)
 		{
-			if (p != d)
+			putchar(k + '0');
+			putchar(j + '0');
+
+			if (i < 89)
 			{
-				putchar(d);
-				putchar(p);
-
-				if (d == '8' && p == '9')
-					continue;
-
-				putchar(',');
-				putchar(' ');
+				putchar(44);
+				putchar(32);
 			}
 		}
+		i++;
 	}
 	putchar('\n');
 	return (0);
