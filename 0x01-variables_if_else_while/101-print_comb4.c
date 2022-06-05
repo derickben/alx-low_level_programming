@@ -9,28 +9,30 @@
  */
 int main(void)
 {
-	int i, j, k;
+	int d, p, q;
 
-	int i = 0;
-
-	while (i < 100)
+	for (d = '0'; d < '9'; d++)
 	{
-		j = i % 10; /* singles digit */
-		k = i / 10; /* doubles digit */
-
-		if (k < j)
+		for (p = d + 1; p <= '9'; p++)
 		{
-			putchar(k + '0');
-			putchar(j + '0');
-
-			if (i < 89)
+			for (q = p + 1; q <= '9'; q++)
 			{
-				putchar(44);
-				putchar(32);
+				if ((p != d) != q)
+				{
+					putchar(d);
+					putchar(p);
+					putchar(q);
+
+					if (d == '7' && p == '8')
+						continue;
+
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
-		i++;
 	}
 	putchar('\n');
+
 	return (0);
 }
