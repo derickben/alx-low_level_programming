@@ -1,19 +1,21 @@
-#include <unistd.h>
 #include "main.h"
-
 /**
- * main - Check description
- * Description: It prints the word _putchar, followed by a new line.
- * Return: 0.
+ * main - Print "_putchar" followed by a new line.
+ * Description: You are not allowed to include standard libraries.
+ * Return: 0
  */
 int main(void)
 {
-	char word[9] = "_putchar";
-	int i;
+	char holberton[] = "_putchar";
+	int i = 0;
 
-	for (i = 0; i < 9; i++)
-		_putchar(word[i]);
+	while (holberton[i] != '\0')
+	{
+		_putchar(holberton[i]);
+		i++;
+	}
 	_putchar('\n');
 
 	return (0);
 }
+
